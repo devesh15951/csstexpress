@@ -10,6 +10,15 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/* Devesh's Temporary Route */
+
+router.get('/devesh', function(req, res, next) {
+  res.render('devesh', {
+    pageTitle: 'Devesh',
+    pageID: 'devesh'
+  });
+});
+
 router.get('/people', function(req, res) {
 
   url = 'http://localhost:8529/_db/csstdev/csstdev/people'
