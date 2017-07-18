@@ -28,9 +28,9 @@ router.get('/events', function(req, res, next) {
   });
 });
 
-router.get('/event/:eventID', function(req, res, next) {
+router.get('/event-:eventID', function(req, res, next) {
   res.render('single-event', {
-    pageTitle: 'Sponsored Events',
+    pageTitle: 'Sponsored Event: ' + req.params.eventID,
     pageID: 'page-' + req.params.eventID
   });
 });

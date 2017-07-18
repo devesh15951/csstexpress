@@ -45,6 +45,7 @@ app.use(function(err, req, res, next) {
 
 // Set app locals
 
-app.locals.siteTitle = 'CSST on the Web'
+app.locals.siteTitle = 'Sociotech.net'
+app.locals.siteTagline = 'Home of sociotechnical systems research'
 
 module.exports = app;

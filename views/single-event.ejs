@@ -1,59 +1,225 @@
 <!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 
 <head>
-  <% include partials/head.ejs %>
+	<% include partials/head.ejs %>
+
 </head>
 
-<body class="homepage">
-  <div id="page-wrapper">
+<body class="no-sidebar">
+	<div id="page-wrapper">
 
-    <!-- Header -->
-    <% include partials/menu.ejs %>
+		<!-- Banner and Menu -->
+		<% include partials/top.ejs %>
 
-      <!-- Banner -->
-      <% include partials/banner.ejs %>
+		<!-- Main -->
+		<div class="wrapper style2">
+			<div class="title"><%= pageTitle%></div>
+			<div id="main" class="container">
 
-          <!-- Main -->
-          <div id="main-wrapper">
-            <div class="container">
-              <div id="content">
+				<!-- Content -->
+				<div id="content">
+					<article class="box post">
+						<header class="style1">
+							<h2>Lorem ipsum dolor sit amet magna egestas<br class="mobile-hide" />
+										morbi bibendum sed malesuada</h2>
+							<p>Tempus feugiat veroeros sed nullam dolore</p>
+						</header>
+						<a href="#" class="image featured">
+										<img src="images/pic01.jpg" alt="" />
+									</a>
+						<p>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. odio eleifend. Duis commodo fringilla commodo. Aliquam erat volutpat. Vestibulum facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam tempus
+							euismod. Vestibulum ante ipsum primis in faucibus.</p>
+						<p>Phasellus nisl nisl, varius id porttitor sed, pellentesque ac orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi bibendum justo sed mauris vehicula malesuada aliquam elit imperdiet. Aliquam
+							eu nibh lorem, eget gravida mi. Duis odio diam, luctus et vulputate vitae, vehicula ac dolor. Pellentesque at urna eget tellus lobortis ultrices sed non erat. Donec eget erat non magna volutpat malesuada quis eget eros. Nullam sodales cursus sapien,
+							id consequat leo suscipit ut. Praesent id turpis vitae turpis pretium ultricies. Vestibulum sit amet risus elit.</p>
+						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci eget quam rutrum bibendum. Proin pellentesque diam non ligula commodo tempor.
+							Vivamus eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. Donec elementum ligula dignissim sem pulvinar non semper odio eleifend. Duis commodo fringilla commodo. Aliquam erat volutpat.
+							Vestibulum facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+						<p>Phasellus nisl nisl, varius id porttitor sed, pellentesque ac orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi bibendum justo sed mauris vehicula malesuada aliquam elit imperdiet. Aliquam
+							eu nibh lorem, eget gravida mi. Duis odio diam, luctus et vulputate vitae, vehicula ac dolor. Pellentesque at urna eget tellus lobortis ultrices sed non erat. Donec eget erat non magna volutpat malesuada quis eget eros. Nullam sodales cursus sapien,
+							id consequat leo suscipit ut. Praesent id turpis vitae turpis pretium ultricies. Vestibulum sit amet risus elit.</p>
+					</article>
+					<div class="row 150%">
+						<div class="4u 12u(mobile)">
+							<section class="box">
+								<header>
+									<h2>Magna pulvinar tempus</h2>
+								</header>
+								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+								<p>Rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis tempus.
+								</p>
+								<a href="#" class="button style1">More</a>
+							</section>
+						</div>
+						<div class="4u 12u(mobile)">
+							<section class="box">
+								<header>
+									<h2>Magna pulvinar tempus</h2>
+								</header>
+								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+								<p>Rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis tempus.
+								</p>
+								<a href="#" class="button style1">More</a>
+							</section>
+						</div>
+						<div class="4u 12u(mobile)">
+							<section class="box">
+								<header>
+									<h2>Magna pulvinar tempus</h2>
+								</header>
+								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
+								<p>Rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis tempus.
+								</p>
+								<a href="#" class="button style1">More</a>
+							</section>
+						</div>
+					</div>
+				</div>
 
-                <!-- Content -->
-                <article>
+			</div>
+		</div>
 
-                  <h2>No Sidebar</h2>
+		<!-- Highlights -->
+		<div class="wrapper style3">
+			<div class="title">The Endorsements</div>
+			<div id="highlights" class="container">
+				<div class="row 150%">
+					<div class="4u 12u(mobile)">
+						<section class="highlight">
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<h3><a href="#">Aliquam diam consequat</a></h3>
+							<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+							<ul class="actions">
+								<li><a href="#" class="button style1">Learn More</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="4u 12u(mobile)">
+						<section class="highlight">
+							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+							<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+							<ul class="actions">
+								<li><a href="#" class="button style1">Learn More</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="4u 12u(mobile)">
+						<section class="highlight">
+							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<h3><a href="#">Mattis tempus lorem</a></h3>
+							<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+							<ul class="actions">
+								<li><a href="#" class="button style1">Learn More</a></li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                  <p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi consequat etiam
-                    lorem ipsum dolor sit amet nullam.</p>
+		<!-- Footer -->
+		<div id="footer-wrapper" class="wrapper">
+			<div class="title">The Rest Of It</div>
+			<div id="footer" class="container">
+				<header class="style1">
+					<h2>Ipsum sapien elementum portitor?</h2>
+					<p>
+						Sed turpis tortor, tincidunt sed ornare in metus porttitor mollis nunc in aliquet.<br /> Nam pharetra laoreet imperdiet volutpat etiam consequat feugiat.
+					</p>
+				</header>
+				<hr />
+				<div class="row 150%">
+					<div class="6u 12u(mobile)">
 
-                  <h3>More intriguing information</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis, ultricies a bibendum id, bibendum sit amet
-                    nisl. Mauris et lorem quam. Maecenas rutrum imperdiet vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor. Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi.
-                    Etiam convallis rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien. Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi. Phasellus sed nisl vitae risus
-                    tristique volutpat. Cras rutrum commodo luctus.</p>
+						<!-- Contact Form -->
+						<section>
+							<form method="post" action="#">
+								<div class="row 50%">
+									<div class="6u 12u(mobile)">
+										<input type="text" name="name" id="contact-name" placeholder="Name" />
+									</div>
+									<div class="6u 12u(mobile)">
+										<input type="text" name="email" id="contact-email" placeholder="Email" />
+									</div>
+								</div>
+								<div class="row 50%">
+									<div class="12u">
+										<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<ul class="actions">
+											<li><input type="submit" class="style1" value="Send" /></li>
+											<li><input type="reset" class="style2" value="Reset" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
 
-                  <p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu. Suspendisse laoreet metus ut metus imperdiet interdum
-                    aliquam justo tincidunt. Mauris dolor urna, fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium. Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu. Vestibulum
-                    purus augue, tincidunt sit amet iaculis id, porta eu purus.</p>
+					</div>
+					<div class="6u 12u(mobile)">
 
-                </article>
+						<!-- Contact -->
+						<section class="feature-list small">
+							<div class="row">
+								<div class="6u 12u(mobile)">
+									<section>
+										<h3 class="icon fa-home">Mailing Address</h3>
+										<p>
+											Untitled Corporation<br /> 1234 Somewhere Rd #987<br /> Nashville, TN 00000-0000
+										</p>
+									</section>
+								</div>
+								<div class="6u 12u(mobile)">
+									<section>
+										<h3 class="icon fa-comment">Social</h3>
+										<p>
+											<a href="#">@untitled-corp</a><br />
+											<a href="#">linkedin.com/untitled</a><br />
+											<a href="#">facebook.com/untitled</a>
+										</p>
+									</section>
+								</div>
+							</div>
+							<div class="row">
+								<div class="6u 12u(mobile)">
+									<section>
+										<h3 class="icon fa-envelope">Email</h3>
+										<p>
+											<a href="#">info@untitled.tld</a>
+										</p>
+									</section>
+								</div>
+								<div class="6u 12u(mobile)">
+									<section>
+										<h3 class="icon fa-phone">Phone</h3>
+										<p>
+											(000) 555-0000
+										</p>
+									</section>
+								</div>
+							</div>
+						</section>
 
-              </div>
-            </div>
-          </div>
+					</div>
+				</div>
+				<hr />
+			</div>
+			<div id="copyright">
+				<ul>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</div>
 
+	</div>
 
-          <!-- Footer -->
-          <% include partials/footer.ejs %>
-
-            <!-- Scripts -->
-            <% include partials/scripts.ejs %>
+	<!-- Scripts -->
+	<% include partials/scripts.ejs %>
 
 </body>
 
