@@ -7,12 +7,7 @@
 <html>
 
 <head>
-  <title>    <%= siteTitle %> -- <%= pageTitle %></title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--[if lte IE 8]><script src="javascripts/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="stylesheets/main.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="stylesheets/ie9.css" /><![endif]-->
+  <% include partials/head.ejs %>
 </head>
 
 <body>
@@ -53,10 +48,11 @@
                     <%  for (i=0;i < myData.length;i++) { %>
                       <li>
                         <% var item = myData[i]; %>
-                        <%= item.institution %>: <%= item.member_count %> attendees.
+                          <%= item.institution %>:
+                            <%= item.member_count %> attendees.
                       </li>
                       <% } %>
-                    <% } %>
+                        <% } %>
                 </ul>
               </p>
             </section>
@@ -174,25 +170,13 @@
         </div>
         <div class="row">
           <div class="12u">
-
-            <div id="copyright">
-              &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="javascripts/jquery.min.js"></script>
-  <script src="javascripts/skel.min.js"></script>
-  <script src="javascripts/skel-viewport.min.js"></script>
-  <script src="javascripts/util.js"></script>
-  <!--[if lte IE 8]><script src="javascripts/ie/respond.min.js"></script><![endif]-->
-  <script src="javascripts/main.js"></script>
-
+  <% include partials/scripts.ejs %>
 </body>
 
 </html>

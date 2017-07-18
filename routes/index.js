@@ -19,6 +19,24 @@ router.get('/devesh', function(req, res, next) {
   });
 });
 
+/* Event Routes */
+
+router.get('/events', function(req, res, next) {
+  res.render('events', {
+    pageTitle: 'Sponsored Events',
+    pageID: 'events'
+  });
+});
+
+router.get('/event/:eventID', function(req, res, next) {
+  res.render('single-event', {
+    pageTitle: 'Sponsored Events',
+    pageID: 'page-' + req.params.eventID
+  });
+});
+
+/* People Routes */
+
 router.get('/people', function(req, res) {
 
   url = 'http://localhost:8529/_db/csstdev/csstdev/people'
@@ -35,19 +53,19 @@ router.get('/people', function(req, res) {
   });
 });
 
-/* Get Zotero Feeds */
+/* Zotero Feeds */
 
-router.get('/recreading', function(req, res) {
+router.get('/library', function(req, res) {
 
-  url = 'http://api.zotero.org/groups/271377/collections/7VXM4ZGP/items/top?start=0&limit=25&format=json'
+  url = 'http://api.zotero.org/groups/271377/collections/7VXM4ZGP/items/top?start=0&limit=10&format=json'
   request(url, function(error, response, data) {
     console.log('error:', error);
     console.log('statusCode:', response && response.statusCode);
     myData = JSON.parse(data)
   });
 
-  res.render('reading', {
-    pageTitle: 'Core Sociotechnical Readings',
+  res.render('library', {
+    pageTitle: 'Recommended Sociotechnical Readings',
     pageID: 'recreading',
     myData: myData
   });
