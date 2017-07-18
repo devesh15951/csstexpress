@@ -4,9 +4,22 @@ var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
+  // Get Discourse content
+
+  url = 'http://community.sociotech.net/latest.json'
+  request(url, function(error, response, data) {
+    console.log('error:', error);
+    console.log('statusCode:', response && response.statusCode);
+    discLatest = JSON.parse(data);
+    // console.log(discLatest.topic_list.topics);
+  });
+
   res.render('index', {
     pageTitle: 'Home',
-    pageID: 'home'
+    pageID: 'home',
+    discLatestFeed: discLatest.topic_list.topics
+
   });
 });
 
