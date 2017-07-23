@@ -1,0 +1,12 @@
+<script>
+  var chart = c3.generate({
+    bindto: '#midchart',
+    data: {
+      json: myData,
+      keys: {
+        x: 'institution', // @TODO THIS STILL ISN'T WORKING.
+        value: 'member_count'
+      }
+    }
+  });
+</script>

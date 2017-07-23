@@ -1,15 +1,43 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
 </head>
 
-<body id="<%= pageID %>">
-  <h1><%= siteTitle %></h1>
-  <p>
-    <%= pageTitle %>
-  </p>
+<body>
+  <div id="chart1" style="height:300px;"></div>
+  <div class="chart2" style="height:150px;"></div>
+  <div class="chart3" style="height:150px;"></div>
 
+  <script>
+    var chart1 = c3.generate({
+      bindto: '#chart1',
+      data: {
+        columns: [
+          ['data1', 130, 210, 120, 440, 250, 350]
+        ]
+      }
+    });
+    var chart2 = c3.generate({
+      bindto: '.chart2',
+      data: {
+        columns: [
+          ['data1', 30, 200, 100, 400, 150, 250]
+        ]
+      }
+    });
+    var chart3 = c3.generate({
+      bindto: document.getElementsByClassName('chart3')[0],
+      data: {
+        columns: [
+          ['data1', 30, 200, 100, 400, 150, 250]
+        ]
+      }
+    });
+  </script>
 </body>
+
 </html>

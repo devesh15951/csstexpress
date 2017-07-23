@@ -23,13 +23,25 @@
               <!-- Sidebar -->
               <div id="sidebar">
                 <section class="box">
+                  <header>
+                    <h2>Get Involved</h2>
+                  </header>
+                  <p>There are many ways to get involved: Check out our events. Post or view job listings. Request funding for a workshop. Discuss the latest research. Find other researchers like you.</p>
+                  <a href="#" class="button style3">Learn More</a>
+
+                  <!-- @TODO Make these "get involved" links on home page active -->
+
+                </section>
+                <section class="box">
 
                   <!-- <% include partials/highlights.ejs %> -->
                   <!-- This section & partial does exist but not always necessary -->
 
                 </section>
                 <section class="box">
-                  <% include partials/discourse-links.ejs %>
+                  <p>
+                    This
+                  </p>
                 </section>
               </div>
 
@@ -61,13 +73,11 @@
                 <hr />
                 <h1>Latest Announcements</h1>
                 <ul class="style2">
-                  <% for (var i = 0; i < 5; i++) { %>
-                    <% var item = discourseLatest[i]; %>
-                      <% if (item.category_id = 4) { %>
+                  <% for (var i = 0; i < latestJobs.length; i++) { %>
+                    <% var item = latestJobs[i]; %>
+                      <% if (item.category_id == 11) { %>
                         <li>
-                          <h4><%=item.title %></h4>
-                          <%= item.excerpt %>
-                            <BR /><a href="http://community.sociotech.net/t/<%= item.slug %>">Posted: <%= item.created_at %>.</a>
+                          <%= item.title %>
                         </li>
                         <% } %>
                           <% } %>

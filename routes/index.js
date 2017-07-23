@@ -2,88 +2,72 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
-/* GET home page. */
+var discourseLatest = [];
+var libData = [];
+var csstEvents = [];
+
+/* Route: GET home page. */
+
 router.get('/', function(req, res, next) {
 
-  // Get Discourse content
+  /* Get latest posts (all) from Discourse */
 
-  url = 'http://community.sociotech.net/latest.json'
-  request(url, function(error, response, data) {
-    console.log('error:', error);
-    console.log('statusCode:', response && response.statusCode);
-    discLatest = JSON.parse(data);
-    // console.log(discLatest.topic_list.topics);
-  });
+  var url = 'http://community.sociotech.net/latest.json'
+    request(url, function(error, response, data) {
+      if (error != null) {
+        console.log('error:', error)
+      }
+      console.log('statusCode:', response && response.statusCode)
+      discourseLatest = JSON.parse(data)
+    }),
+    next()
+  }, function(req, res, next) {
 
-  res.render('index', {
-    pageTitle: 'Home',
-    pageID: 'home',
-    discLatestFeed: discLatest.topic_list.topics
+    /* Get CSST events and reports from Discourse */
 
-  });
-});
+    request({
+      method: 'GET',
+      uri: 'http://community.sociotech.net/c/csst.json?api_key=' + discourse_api_key + '&api_username=' + discourse_api_username
+    }, function(error, response, body) {
+      csstEvents = JSON.parse(body)
+    })
+    next()
+  }, function(req, res, next) {
 
-/* Devesh's Temporary Route */
+    res.render('index', {
+      pageTitle: 'Home',
+      pageID: 'home',
+      discourseLatest: discourseLatest.topic_list.topics,
+      csstEvents: csstEvents.topic_list.topics
+    })
+  })
 
-router.get('/devesh', function(req, res, next) {
-  res.render('devesh', {
-    pageTitle: 'Devesh',
-    pageID: 'devesh'
-  });
-});
+  /* Zotero Feeds */
 
-/* Event Routes */
+  router.get('/library', function(req, res, next) {
+    request({
+      method: 'GET',
+      uri: 'http://api.zotero.org/groups/271377/collections/7VXM4ZGP/items/top?start=0&limit=10&format=json'
+    }, function(error, response, body) {
+      libData = JSON.parse(body)
+    })
 
-router.get('/events', function(req, res, next) {
-  res.render('events', {
-    pageTitle: 'Sponsored Events',
-    pageID: 'events'
-  });
-});
+    res.render('library', {
+      pageTitle: 'Recommended Sociotechnical Readings',
+      pageID: 'recreading',
+      libData: libData
+    })
+  })
 
-router.get('/event-:eventID', function(req, res, next) {
-  res.render('single-event', {
-    pageTitle: 'Sponsored Event: ' + req.params.eventID,
-    pageID: 'page-' + req.params.eventID
-  });
-});
+  /* Devesh's Temporary Route */
 
-/* People Routes */
+  router.get('/devesh', function(req, res, next) {
+    res.render('devesh', {
+      pageTitle: 'Devesh',
+      pageID: 'devesh'
+    })
+  })
 
-router.get('/people', function(req, res) {
+  /* --------------------- */
 
-  url = 'http://localhost:8529/_db/csstdev/csstdev/people'
-  request(url, function(error, response, data) {
-    console.log('error:', error);
-    console.log('statusCode:', response && response.statusCode);
-    myData = JSON.parse(data)
-  });
-
-  res.render('people', {
-    pageTitle: 'People',
-    pageID: 'people',
-    myData: myData
-  });
-});
-
-/* Zotero Feeds */
-
-router.get('/library', function(req, res) {
-
-  url = 'http://api.zotero.org/groups/271377/collections/7VXM4ZGP/items/top?start=0&limit=10&format=json'
-  request(url, function(error, response, data) {
-    console.log('error:', error);
-    console.log('statusCode:', response && response.statusCode);
-    myData = JSON.parse(data)
-  });
-
-  res.render('library', {
-    pageTitle: 'Recommended Sociotechnical Readings',
-    pageID: 'recreading',
-    myData: myData
-  });
-});
-
-/* --------------------- */
-
-module.exports = router;
+  module.exports = router;

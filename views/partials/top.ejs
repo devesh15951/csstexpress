@@ -15,14 +15,19 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li>
-          <a href="#">Events</a>
+          <a href="#">Our Events</a>
           <ul>
             <li>
               <a href="#">Summer Research Institute ></a>
               <ul>
-                <li><a href="#">Lorem dolor</a></li>
-                <li><a href="#">Amet consequat</a></li>
-                <li><a href="#">Magna phasellus</a></li>
+                <% for (var i = 0; i < csstEvents.length; i++) { %>
+                  <% var item = csstEvents[i]; %>
+                    <li>
+                      <a href="http://community.sociotech.net/t/<%= item.slug %>">
+                        <%= item.title %>
+                      </a>
+                    </li>
+                    <% } %>
               </ul>
             </li>
             <li>
@@ -35,10 +40,19 @@
             </li>
           </ul>
         </li>
-        <li><a href="/research">Sociotech Research</a></li>
-        <li><a href="/jobs">Jobs Listings</a></li>
-        <li><a href="/getinvolved">Get Involved</a></li>
+        <li><a href="/jobs">Jobs Listings</a>
+          <ul>
+            <li>
+              <a href="#">Recent Listings</a>
+              <a href="#">Post a Job</a>
+              <a href="#">Mentoring and Advice</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/library">Recommended Readings</a></li>
+
       </ul>
+
     </nav>
 
 

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <% include partials/head.ejs %>
+</head>
+
+<body class="no-sidebar">
+  <div id="page-wrapper">
+
+    <% include partials/top.ejs %>
+
+      <!-- Main -->
+      <div class="wrapper style2">
+        <div class="title">
+          <%= pageTitle%>
+        </div>
+        <div id="main" class="container">
+
+          <!-- Content -->
+          Browse and search the full sociotechnical publications library in our Zotero group. Dozens of publication venues are included in this list (they’re all listed here) and articles that directly engage sociotechnical phenomena are highlighted on sociotech.net.
+          CSST curates a library of notable contributions to the growing and diverse body of sociotechnical literature. Curated by the experts in the CSST Sociotechnical Community, this list of core sociotechnical readings will help students and scholars
+          establish a basic understanding of the history and ideas that constitute sociotechnical scholarship. CSST also collects recent sociotechnical publications from journal articles and conference proceedings. If you have a recent publication you
+          feel should be added, send us an email.
+
+          <h1>Latest Additions to Core Readings</h1>
+          <ul class="style2">
+            <% for (var i = 0; i < 5; i++) { %>
+              <% var item = libData[i]; %>
+                <li>
+                  <a href="<%= item.data.url %>" target="_blank">
+                    <%= item.data.title %>
+                  </a> (
+                  <%= item.meta.creatorSummary %>)
+                    <BR / />
+                    <%= item.data.abstractNote %>
+                </li>
+                <% } %>
+          </ul>
+
+          <div id="content">
+            <article class="box post">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer-section Highlights -->
+      <!-- <% include partials/footer-highlights.ejs %> -->
+      <!-- This section & partial does exist but not always necessary -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+  </div>
+
+  <!-- Scripts -->
+  <% include partials/scripts.ejs %>
+
+</body>
+
+</html>

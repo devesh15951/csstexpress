@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <% include partials/head.ejs %>
+</head>
+
+<body>
+  Test: <%= pageTitle %>
+
+  <ul>
+
+    <% for (var i = 0; i < peopleData.length; i++) { %>
+      <% item = peopleData[i] %>
+        <li>
+          <%= item.username %>
+        </li>
+        <% } %>
+
+  </ul>
+
+</body>

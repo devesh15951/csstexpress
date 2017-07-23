@@ -1,0 +1,54 @@
+<header>
+  <h2>Log in to ScholarMap</h2>
+</header>
+
+<p>
+<a href="<%= scholarmaplink %>"><img src="images/scholarmap1.png" alt="log in to scholarmap" style="width: 100%"/></a>
+</p>
+
+
+<header>
+  <h2>Latest Job Listings</h2>
+</header>
+
+<p>
+
+  <ul class="style2">
+    <% for (var i = 0; i < discourseLatest.length; i++) { %>
+      <% var item = discourseLatest[i]; %>
+        <% if (item.category_id == 11) { %>
+          <li>
+            <a href="http://community.sociotech.net/t/<%= item.slug %>">
+              <%= item.title %>
+            </a>
+          </li>
+          <% } %>
+            <% } %>
+              <li>
+
+                <a href="http://community.sociotech.net/c/announcements/jobs/l/latest">More Job Listings...</a>
+                <BR />
+                <a href="http://community.sociotech.net/c/announcements/jobs/l/latest">Post a Job...</a>
+
+              </li>
+  </ul>
+
+</p>
+
+<!-- @TODO add "post a job" form. -->
+
+<header>
+  <h2>Announcements</h2>
+</header>
+<ul class="style3">
+  <% for (var i = 0; i < discourseLatest.length; i++) { %>
+    <% var item = discourseLatest[i]; %>
+      <% if (item.category_id == 6) { %>
+        <li>
+          <a href="http://community.sociotech.net/t/<%= item.slug %>">
+            <%=item.title %>
+          </a>
+        </li>
+        <% } %>
+          <% } %>
+</ul>

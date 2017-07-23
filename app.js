@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var people = require('./routes/people');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/people', people);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -49,5 +51,9 @@ app.use(function(err, req, res, next) {
 
 app.locals.siteTitle = 'Sociotech.net'
 app.locals.siteTagline = 'Home of sociotechnical systems research'
+app.locals.scholarmaplink = 'http://somelab09.cci.fsu.edu:8080/ScholarMap'
+
+discourse_api_key = '6495d477da68c50841ad02aa5ddb47fd78f8b87c5b69ed2ac7240d5427ae9436'
+discourse_api_username = 'sociotech'
 
 module.exports = app;
