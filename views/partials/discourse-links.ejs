@@ -13,7 +13,7 @@
 
 <p>
 
-  <ul class="style2">
+  <ul class="style3">
     <% for (var i = 0; i < discourseLatest.length; i++) { %>
       <% var item = discourseLatest[i]; %>
         <% if (item.category_id == 11) { %>
@@ -51,4 +51,21 @@
         </li>
         <% } %>
           <% } %>
+</ul>
+
+Browse and search the full sociotechnical publications library in our Zotero group.
+
+<h1>Latest Additions to Core Readings</h1>
+<ul class="style2">
+  <% for (var i = 0; i < 5; i++) { %>
+    <% var item = libData[i]; %>
+      <li>
+        <a href="<%= item.data.url %>" target="_blank">
+          <%= item.data.title %>
+        </a> (
+        <%= item.meta.creatorSummary %>)
+          <BR / />
+          <%= item.data.abstractNote %>
+      </li>
+      <% } %>
 </ul>

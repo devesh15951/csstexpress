@@ -2060,7 +2060,7 @@
 
 			.dropotron {
 				background: #222835 url("images/overlay.png");
-				background-color: rgba(44, 50, 63, 0.925);
+				background-color: rgba(44, 50, 63, 0.825);
 				padding: 1.25em 1em 1.25em 1em;
 				border-radius: 0.35em;
 				box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
@@ -2072,7 +2072,7 @@
 
 				.dropotron.level-0 {
 					margin-top: -1px;
-					margin-left: 0;
+					margin-left: 100;
 					border-top-left-radius: 0;
 					border-top-right-radius: 0;
 				}
